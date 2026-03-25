@@ -1,0 +1,291 @@
+@import "tailwindcss";
+
+@theme {
+  --color-depth-1: #4caf50;
+  --color-depth-2: #2196f3;
+  --color-depth-3: #ffc107;
+  --color-depth-4: #ff9800;
+  --color-depth-5: #f44336;
+
+  --color-area-praca: #5c6bc0;
+  --color-area-imprezy: #ab47bc;
+  --color-area-relacje: #ef5350;
+  --color-area-randki: #ec407a;
+  --color-area-rodzicielstwo: #26a69a;
+
+  --color-brand: #1a1a2e;
+  --color-brand-light: #16213e;
+  --color-brand-accent: #e94560;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  background: #f8f9fa;
+}
+
+/* ── ANIMATED DEPTH BAR PULSE ── */
+@keyframes depthPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* ── SKELETON SHIMMER ── */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(90deg, transparent 25%, rgba(255,255,255,0.08) 50%, transparent 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* ── GRADIENT MESH HERO BACKGROUND ── */
+@keyframes meshMove1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(30px, -20px) scale(1.05); }
+  50% { transform: translate(-20px, 30px) scale(0.95); }
+  75% { transform: translate(15px, 15px) scale(1.02); }
+}
+
+@keyframes meshMove2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-40px, 20px) scale(1.08); }
+  66% { transform: translate(25px, -30px) scale(0.92); }
+}
+
+@keyframes meshMove3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  20% { transform: translate(20px, 25px) scale(1.03); }
+  40% { transform: translate(-30px, -10px) scale(0.97); }
+  60% { transform: translate(10px, -20px) scale(1.06); }
+  80% { transform: translate(-15px, 15px) scale(0.98); }
+}
+
+.gradient-mesh {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  opacity: 0.15;
+}
+
+.gradient-mesh .mesh-blob-1 {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #3b82f6, transparent 70%);
+  animation: meshMove1 20s ease-in-out infinite;
+}
+
+.gradient-mesh .mesh-blob-2 {
+  position: absolute;
+  bottom: 5%;
+  right: 10%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #8b5cf6, transparent 70%);
+  animation: meshMove2 20s ease-in-out infinite;
+}
+
+.gradient-mesh .mesh-blob-3 {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #6366f1, transparent 70%);
+  animation: meshMove3 20s ease-in-out infinite;
+}
+
+/* ── CARD HOVER EFFECTS (AllCardsPage) ── */
+.card-hover-effect {
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.card-hover-effect:hover {
+  transform: scale(1.03);
+}
+
+.card-hover-effect .card-open-btn {
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+}
+
+.card-hover-effect:hover .card-open-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── LIGHT MODE OVERRIDES ── */
+.light-mode {
+  background-color: #f1f5f9;
+}
+
+.light-mode .min-h-screen {
+  background: linear-gradient(to bottom right, #f1f5f9, #e2e8f0, #f1f5f9) !important;
+  color: #1e293b !important;
+}
+
+.light-mode .text-white {
+  color: #1e293b !important;
+}
+
+.light-mode .text-gray-300,
+.light-mode .text-gray-400,
+.light-mode .text-slate-300,
+.light-mode .text-slate-400 {
+  color: #64748b !important;
+}
+
+.light-mode .bg-slate-800,
+.light-mode .bg-slate-900,
+.light-mode .from-slate-900,
+.light-mode .via-slate-800 {
+  background-color: transparent !important;
+}
+
+.light-mode .bg-slate-800\/50,
+.light-mode .bg-white\/5,
+.light-mode .bg-white\/10 {
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  border-color: #e2e8f0 !important;
+}
+
+.light-mode .border-white\/10,
+.light-mode .border-slate-700 {
+  border-color: #cbd5e1 !important;
+}
+
+.light-mode .dark-page {
+  background: linear-gradient(to bottom right, #f1f5f9, #e2e8f0, #f1f5f9) !important;
+  color: #1e293b;
+}
+
+.light-mode .dark-page .dark-nav {
+  border-color: #cbd5e1;
+}
+
+.light-mode .dark-page .dark-card {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  border-color: #cbd5e1 !important;
+}
+
+.light-mode .dark-page .dark-card:hover {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.light-mode .dark-page .dark-text {
+  color: #475569;
+}
+
+.light-mode .dark-page .dark-text-secondary {
+  color: #64748b;
+}
+
+.light-mode .dark-page .dark-heading {
+  color: #0f172a;
+}
+
+.light-mode .dark-page .dark-bg-section {
+  background-color: rgba(241, 245, 249, 0.5);
+  border-color: #e2e8f0;
+}
+
+/* ── PRINT STYLESHEET ── */
+@media print {
+  @page {
+    size: A4;
+    margin: 10mm 8mm;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    color-adjust: exact;
+    background: white !important;
+  }
+
+  .no-print,
+  .scroll-progress,
+  .dark-toggle,
+  nav,
+  footer,
+  button {
+    display: none !important;
+  }
+
+  .print-break {
+    page-break-after: always;
+    break-after: page;
+  }
+
+  /* Prevent orphan cards */
+  .print-card {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin-bottom: 4mm;
+  }
+
+  /* QR codes always visible */
+  .print-qr {
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  /* Preserve area stripe colors */
+  .print-stripe {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    color-adjust: exact;
+  }
+
+  /* A4 content area */
+  .print-content {
+    max-width: 190mm;
+    margin: 0 auto;
+  }
+
+  /* Reset dark backgrounds for print */
+  .dark-page {
+    background: white !important;
+    color: black !important;
+  }
+
+  /* Reset card backgrounds */
+  .dark-card {
+    background: white !important;
+    border: 1px solid #e2e8f0 !important;
+  }
+
+  /* Ensure text is readable */
+  * {
+    color: black !important;
+    text-shadow: none !important;
+  }
+
+  /* Preserve colored elements */
+  .print-stripe,
+  .print-qr,
+  [data-print-color] {
+    color: initial !important;
+  }
+
+  /* Image handling */
+  img {
+    max-width: 100%;
+    page-break-inside: avoid;
+  }
+
+  /* Links */
+  a {
+    text-decoration: none !important;
+  }
+}
