@@ -1,0 +1,57 @@
+{
+  "name": "Pogłębiarki — Karty Rozmów",
+  "short_name": "Pogłębiarki",
+  "description": "265 kart do głębokich rozmów. 9 obszarów życia. 5 poziomów głębokości.",
+  "start_url": "/poglebiarki/",
+  "display": "standalone",
+  "background_color": "#111827",
+  "theme_color": "#7c3aed",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/poglebiarki/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/poglebiarki/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/poglebiarki/screenshot-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Losuj kartę",
+      "short_name": "Losuj",
+      "description": "Losuj losową kartę",
+      "url": "/poglebiarki/#/losuj",
+      "icons": [{ "src": "/poglebiarki/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Wyzwanie 30 dni",
+      "short_name": "Wyzwanie",
+      "description": "30-dniowe wyzwanie głębi",
+      "url": "/poglebiarki/#/wyzwanie",
+      "icons": [{ "src": "/poglebiarki/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Timer sesji",
+      "short_name": "Timer",
+      "description": "Timer do prowadzenia sesji",
+      "url": "/poglebiarki/#/timer",
+      "icons": [{ "src": "/poglebiarki/icon-192.png", "sizes": "192x192" }]
+    }
+  ],
+  "categories": ["education", "lifestyle", "social"],
+  "lang": "pl-PL"
+}

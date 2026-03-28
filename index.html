@@ -1,14 +1,32 @@
 <!doctype html>
-<html lang="en">
+<html lang="pl">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/poglebiarki/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>poglebiarki</title>
-    <script type="module" crossorigin src="/poglebiarki/assets/index-B3ocqUf8.js"></script>
-    <link rel="stylesheet" crossorigin href="/poglebiarki/assets/index-DvWWl9mt.css">
+    <link rel="icon" type="image/png" href="/poglebiarki/icon-192.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Pogłębiarki — Karty Rozmów</title>
+    <meta name="description" content="265 kart do głębokich rozmów. 9 obszarów życia. 5 poziomów głębokości. Narzędzie psychologiczne dla trenerów, par i teamów." />
+    <meta name="theme-color" content="#7c3aed" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Pogłębiarki" />
+    <link rel="apple-touch-icon" href="/poglebiarki/icon-192.png" />
+    <link rel="manifest" href="/poglebiarki/manifest.json" />
+    <meta property="og:title" content="Pogłębiarki — Karty Rozmów" />
+    <meta property="og:description" content="265 kart do głębokich rozmów. 9 obszarów życia. 5 poziomów głębokości." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/poglebiarki/icon-512.png" />
+    <script type="module" crossorigin src="/poglebiarki/assets/index-f4BSWdPk.js"></script>
+    <link rel="stylesheet" crossorigin href="/poglebiarki/assets/index-CbWDtMgq.css">
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/poglebiarki/sw.js').catch(() => {})
+        })
+      }
+    </script>
   </body>
 </html>
